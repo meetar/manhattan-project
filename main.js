@@ -55,6 +55,7 @@
     window.addEventListener('load', function () {
         // Scene initialized
         layer.addTo(map);
+        exportVBO();
     });
 
 
