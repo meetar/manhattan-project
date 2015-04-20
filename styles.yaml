@@ -12,35 +12,32 @@ lights:
         ambient: 1
 
 sources:
-    osm:
-        type: MVTSource
-        url:  http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mapbox
     local:
         type: GeoJSONTileSource
-        url:  'http://localhost:9000/manhattan16/tiles16/deduped/{z}-{x}-{y}.json'
+        url:  'tiles/{z}-{x}-{y}.json'
 
 layers:
     earth:
-        data: { source: osm }
+        data: { source: local }
         style:
             order: 0
             color: '#ddeeee'
 
     # landuse:
-    #     data: { source: osm }
+    #     data: { source: local }
     #     style:
     #         order: 1
     #         color: '#aaffaa'
     #         interactive: true
 
     # water:
-    #     data: { source: osm }
+    #     data: { source: local }
     #     style:
     #         order: 2
     #         color: '#88bbee'
 
     roads:
-        data: { source: osm }
+        data: { source: local }
         style:
             order: 3
             color: gray    
@@ -64,7 +61,7 @@ layers:
                 width: 10
     
     buildings:
-        data: { source: osm }
+        data: { source: local }
         style:
             order: 4
             color: '#999'
