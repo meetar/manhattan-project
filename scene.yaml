@@ -12,6 +12,9 @@ lights:
         ambient: 1
 
 sources:
+    # osm:
+    #     type: MVT
+    #     url:  http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mapbox
     local:
         type: GeoJSONTileSource
         url:  'tiles/{z}-{x}-{y}.json'
