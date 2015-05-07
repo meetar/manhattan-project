@@ -16,57 +16,64 @@ sources:
     #     type: MVT
     #     url:  http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mapbox
     local:
-        type: GeoJSONTileSource
+        type: GeoJSONTiles
         url:  'tiles/{z}-{x}-{y}.json'
 
 layers:
     earth:
         data: { source: local }
-        style:
-            order: 0
-            color: '#ddeeee'
+        draw:
+            polygons:
+                order: 0
+                color: '#ddeeee'
 
     # landuse:
     #     data: { source: local }
-    #     style:
-    #         order: 1
-    #         color: '#aaffaa'
-    #         interactive: true
+    #     draw:
+    #         polygons:
+    #             color: '#aaffaa'
+    #             interactive: true
 
     # water:
     #     data: { source: local }
-    #     style:
-    #         order: 2
-    #         color: '#88bbee'
+    #     draw:
+    #         polygons:
+    #             order: 2
+    #             color: '#88bbee'
 
     roads:
         data: { source: local }
-        style:
-            order: 3
-            color: gray    
-            width: 5
+        draw:
+            lines:
+                order: 3
+                color: gray    
+                width: 5
         filter:
             not: { kind: ["rail"] }
         highway:
             filter:
                 kind: highway
-            style:
-                width: 15
+            draw:
+                lines:
+                    width: 15
         major_road:
             filter:
                 kind: major_road
-            style:
-                width: 12
+            draw:
+                lines:
+                    width: 12
         minor_road:
             filter:
                 kind: minor_road
-            style:
-                width: 10
+            draw:
+                lines:
+                    width: 10
     
     buildings:
         data: { source: local }
-        style:
-            order: 4
-            color: '#999'
-            extrude: true
+        draw:
+            polygons:
+                order: 4
+                color: '#999'
+                extrude: true
 
