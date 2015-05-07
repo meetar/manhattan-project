@@ -13,10 +13,10 @@ lights:
 
 sources:
     # osm:
-    #     type: MVT
-    #     url:  http://vector.mapzen.com/osm/all/{z}/{x}/{y}.mapbox
+    #     type: TopoJSONTiles
+    #     url:  http://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
     local:
-        type: GeoJSONTileSource
+        type: GeoJSONTiles
         url:  'tiles/{z}-{x}-{y}.json'
 
 layers:
