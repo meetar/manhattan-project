@@ -13,7 +13,7 @@ A Tangram map for exporting a deduped Manhattan tileset.
 
 3. Set the deduped tileset as a datasource for this Tangram map, in `styles.yaml`
 4. Start a web server in this directory and load `index.html`
-5. When the page loads, `batch-convert.js` will export a zip containing the vbos from Tangram
+5. When the page loads, `lib/batch-convert.js` will export a zip containing the vbos from Tangram
 6. Expand the zip, and convert the vbos using [vbo-export](https://github.com/tangrams/vbo-export):
 
     `python vbo_to_ply.py vbos/`
