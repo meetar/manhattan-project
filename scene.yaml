@@ -12,63 +12,63 @@ lights:
         ambient: 1
 
 sources:
-    # osm:
+    # local:
     #     type: TopoJSONTiles
     #     url:  //vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-HqUVidw
 
     local:
         type: GeoJSONTiles
-        url:  'tiles/{z}-{x}-{y}.json'
+        url:  'deduped/{z}-{x}-{y}.json'
 
 layers:
-    earth:
-        data: { source: local }
-        draw:
-            polygons:
-                order: 0
-                color: '#ddeeee'
-
-    # landuse:
+    # earth:
     #     data: { source: local }
     #     draw:
     #         polygons:
-    #             color: '#aaffaa'
-    #             interactive: true
+    #             order: 0
+    #             color: '#ddeeee'
 
-    # water:
+    # # landuse:
+    # #     data: { source: local }
+    # #     draw:
+    # #         polygons:
+    # #             color: '#aaffaa'
+    # #             interactive: true
+
+    # # water:
+    # #     data: { source: local }
+    # #     draw:
+    # #         polygons:
+    # #             order: 2
+    # #             color: '#88bbee'
+
+    # roads:
     #     data: { source: local }
     #     draw:
-    #         polygons:
-    #             order: 2
-    #             color: '#88bbee'
-
-    roads:
-        data: { source: local }
-        draw:
-            lines:
-                order: 3
-                color: gray    
-                width: 5
-        filter:
-            not: { kind: ["rail"] }
-        highway:
-            filter:
-                kind: highway
-            draw:
-                lines:
-                    width: 15
-        major_road:
-            filter:
-                kind: major_road
-            draw:
-                lines:
-                    width: 12
-        minor_road:
-            filter:
-                kind: minor_road
-            draw:
-                lines:
-                    width: 10
+    #         lines:
+    #             order: 3
+    #             color: gray    
+    #             width: 5
+    #     filter:
+    #         not: { kind: ["rail"] }
+    #     highway:
+    #         filter:
+    #             kind: highway
+    #         draw:
+    #             lines:
+    #                 width: 15
+    #     major_road:
+    #         filter:
+    #             kind: major_road
+    #         draw:
+    #             lines:
+    #                 width: 12
+    #     minor_road:
+    #         filter:
+    #             kind: minor_road
+    #         draw:
+    #             lines:
+    #                 width: 10
     
     buildings:
         data: { source: local }
