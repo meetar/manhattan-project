@@ -18,7 +18,7 @@ sources:
 
     local:
         type: GeoJSONTiles
-        url:  'deduped/{z}-{x}-{y}.json'
+        url:  'tiles/{z}-{x}-{y}.json'
 
 layers:
     # earth:
