@@ -1,5 +1,5 @@
 # manhattan-project
-A Tangram map for exporting a deduped Manhattan tileset.
+A [Tangram](https://github.com/tangrams/tangram) map for exporting a deduped Manhattan tileset.
 
 #### The gist
 
