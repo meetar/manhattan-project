@@ -1,7 +1,11 @@
 sources:
-    local:
+    osm:
         type: GeoJSONTiles
+        # url:  'tiles15/{z}-{x}-{y}.json'
         url:  'deduped/{z}-{x}-{y}.json'
+    # local:
+    #     type: GeoJSONTiles
+    #     url:  'tiles15/{z}-{x}-{y}.json'
 
 cameras:
     perspective:
@@ -43,7 +47,7 @@ layers:
             polygons:
                 order: 0
                 color: '#f0ebeb'
-                extrude: 3
+                extrude: 5
 
     # water:
     #     data: { source: osm }
@@ -64,7 +68,7 @@ layers:
     roads:
         data: { source: osm }
         filter:
-            not: { kind: [rail] }
+            not: { kind: [rail, bridge] }
         draw:
             lines:
                 # style: flat_lines
@@ -76,7 +80,8 @@ layers:
                 #     color: '#666'
                 #     width: [[15, 0], [16, 2]]
                 #     order: 4 # put all outlines below all roads (for now)
-                extrude: 5
+                extrude: 3
+                z: 5
 
         # rounded:
         #     filter: { $zoom: { min: 18 } }
@@ -155,6 +160,7 @@ layers:
             polygons:
                 order: 50
                 color: [.65, .65, .65]
+                z: 5
 
         # turn interactive feature selection on for buildings with names
         # interactive:
